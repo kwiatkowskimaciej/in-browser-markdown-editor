@@ -1,12 +1,12 @@
 import { Button } from '../Button';
-import Sidebar from '../Sidebar/Sidebar';
 import FileName from './FileName';
+import SidebarButton from '../Sidebar/SidebarButton';
 
 export default function Navbar() {
   return (
-    <header className="w-full flex items-center justify-between bg-[#2B2D31] pr-2 md:h-[72px] md:pr-4">
+    <header className="w-screen flex items-center justify-between bg-[#2B2D31] pr-2 md:h-[72px] md:pr-4">
       <div className="flex items-center gap-6">
-        <Sidebar />
+        <SidebarButton />
         <FileName />
       </div>
       <div className="flex gap-4">

@@ -1,17 +1,25 @@
-'use client';
-
-import { useState } from 'react';
+import ThemeSwitch from './ThemeSwitch';
+import { Button } from '../Button';
+import File from './File';
 
 export default function Sidebar() {
-  const [show, setShow] = useState(false);
-
   return (
-    <div className="h-14 w-14 bg-[#35393F] flex items-center justify-center md:w-[72px] md:h-[72px]">
-      <svg width="30" height="18" xmlns="http://www.w3.org/2000/svg">
-        <g fill="#FFF" fillRule="evenodd">
-          <path d="M0 0h30v2H0zM0 8h30v2H0zM0 16h30v2H0z" />
-        </g>
-      </svg>
+    <div className={'min-w-[250px] h-full bg-900 p-6'}>
+      <h1 className="tracking-[5px] font-commissioner font-bold text-100">
+        MARKDOWN
+      </h1>
+      <h2 className="text-sm font-medium font-roboto tracking-[2px] my-6 text-500">
+        MY DOCUMENTS
+      </h2>
+      <Button variant={'icon'} size={'full'} className="font-roboto text-100">
+        + New document
+      </Button>
+      <div className="my-6">
+        <File />
+      </div>
+      <div className="fixed bottom-6">
+        <ThemeSwitch />
+      </div>
     </div>
   );
 }
