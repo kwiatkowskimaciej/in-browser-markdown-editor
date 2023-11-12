@@ -7,7 +7,7 @@ export default function FileName() {
           fill="#FFF"
         />
       </svg>
-      welcome.md
+      <span className="text-100">welcome.md</span>
     </div>
   );
 }

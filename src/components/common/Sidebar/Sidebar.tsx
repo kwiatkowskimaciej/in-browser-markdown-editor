@@ -1,10 +1,20 @@
 import ThemeSwitch from './ThemeSwitch';
 import { Button } from '../Button';
 import File from './File';
+import { useSearchParams } from 'next/navigation';
+import { cn } from '@/components/utils/utils';
 
 export default function Sidebar() {
+  const searchParams = useSearchParams();
+  const open = searchParams.get('sidebar') === 'true';
+
   return (
-    <div className={'min-w-[250px] h-full bg-900 p-6'}>
+    <div
+      className={cn(
+        'fixed w-[250px] h-full bg-900 p-6 transition-all duration-300 ease-in-out',
+        open ? 'left-0' : '-left-[250px]'
+      )}
+    >
       <h1 className="tracking-[5px] font-commissioner font-bold text-100">
         MARKDOWN
       </h1>
