@@ -1,5 +1,6 @@
 'use client';
 
+import Editor from '@/components/common/Editor/Editor';
 import Navbar from '@/components/common/Navbar/Navbar';
 import Sidebar from '@/components/common/Sidebar/Sidebar';
 import { cn } from '@/components/utils/utils';
@@ -14,11 +15,12 @@ export default function Home() {
       <Sidebar />
       <div
         className={cn(
-          'fixed left-0 transition-all duration-300 ease-in-out',
+          'h-full fixed left-0 transition-all duration-300 ease-in-out',
           open ? 'left-[250px]' : ''
         )}
       >
         <Navbar />
+        <Editor />
       </div>
     </div>
   );
