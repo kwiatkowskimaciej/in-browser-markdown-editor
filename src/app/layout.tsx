@@ -1,13 +1,29 @@
 import type { Metadata } from 'next';
-import { Roboto, Commissioner } from 'next/font/google';
+import {
+  Roboto,
+  Roboto_Slab,
+  Commissioner,
+  Roboto_Mono,
+} from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import Navbar from '@/components/common/Navbar/Navbar';
+import MarkdownProvider from '@/components/providers/MarkdownProvider';
 
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['300', '400', '500'],
   variable: '--font-roboto',
+});
+const robotoSlab = Roboto_Slab({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+  variable: '--font-roboto-slab',
+});
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-roboto-mono',
 });
 const commissioner = Commissioner({
   subsets: ['latin'],
@@ -26,9 +42,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} ${commissioner.variable} h-screen`}>
+      <body
+        className={`${roboto.variable} ${robotoSlab.variable} ${robotoMono.variable} ${commissioner.variable} h-screen`}
+      >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <MarkdownProvider>{children}</MarkdownProvider>
         </ThemeProvider>
       </body>
     </html>
