@@ -15,8 +15,9 @@ export default function Editor() {
     <div className="h-full flex flex-col ">
       <div className="flex-1 block">
         <textarea
-          className="p-4 pb-28 w-full min-h-full bg-100 text-700 outline-none dark:bg-1000 overflow-y-scroll dark:text-400"
+          className="p-4 pb-28 w-full min-h-full bg-100 text-700 outline-none dark:bg-1000 overflow-y-auto dark:text-400"
           onChange={updateMarkdown}
+          value={markdown}
         />
       </div>
     </div>
